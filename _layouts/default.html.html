@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Juan Desarrollador - Frontend Developer especializado en crear experiencias web excepcionales">
+  <meta name="keywords" content="frontend, developer, web development, portfolio">
+  <meta name="theme-color" content="#9333ea">
+  <title>Diego Ortiz - Frontend Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/ico.png" type="image/x-icon">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Header -->
+    <header class="header" role="banner">
+      <nav class="nav-container" role="navigation" aria-label="Navegación principal">
+        <a href="#inicio" class="logo" aria-label="Ir al inicio">{'Ddev'}</a>
+        
+        <div class="nav-links">
+          <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+          <a href="#habilidades" class="nav-link">Habilidades</a>
+          <a href="#proyectos" class="nav-link">Proyectos</a>
+          <a href="#contacto" class="nav-link">Contacto</a>
+          
+          <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+            <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="inicio" class="hero-section" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <div class="avatar-container">
+            <div class="avatar">
+              <img src="/assets/ico.png" 
+                   alt="Foto de Diego Ortiz"
+                   class="profile-image">
+            </div>
+          </div>
+          
+          <h1 id="hero-heading" class="hero-title">
+            Diego Ortiz
+          </h1>
+          
+          <p class="hero-subtitle">
+            Frontend Developer | Creando experiencias web excepcionales
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#contacto" class="btn btn-primary">
+              Contáctame
+            </a>
+            <a href="#proyectos" class="btn btn-secondary">
+              Ver Proyectos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="sobre-mi" class="about-section" aria-labelledby="about-heading">
+        <div class="container">
+          <h2 id="about-heading" class="section-title">Sobre Mí</h2>
+          
+          <div class="about-content">
+            <p class="about-text">
+              Soy un desarrollador frontend apasionado por crear interfaces de usuario intuitivas y accesibles. 
+              Con experiencia en las últimas tecnologías web, me especializo en convertir diseños complejos 
+              en código limpio y eficiente.
+            </p>
+            <p class="about-text">
+              Mi enfoque se centra en la accesibilidad web, el rendimiento y las mejores prácticas de desarrollo. 
+              Siempre busco aprender nuevas tecnologías y mejorar continuamente mis habilidades.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="habilidades" class="skills-section" aria-labelledby="skills-heading">
+        <div class="container">
+          <h2 id="skills-heading" class="section-title">Habilidades Técnicas</h2>
+          
+          <div class="skills-grid" id="skillsGrid">
+            <!-- Las habilidades se cargarán dinámicamente con JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="proyectos" class="projects-section" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="section-title">Proyectos Destacados</h2>
+          
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Los proyectos se cargarán dinámicamente con JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contacto" class="contact-section" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title">Conectemos</h2>
+          
+          <p class="contact-subtitle">
+            ¿Tienes un proyecto en mente? Me encantaría saber más sobre él.
+          </p>
+          
+          <div class="social-links">
+            <a href="https://wa.me/573213101495?text=Hola,%20he%20visto%20tu%20perfil%20y%20me%20gustar&iacute;a%20cont&aacute;ctarte" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-link"
+               aria-label="Visitar perfil de GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/diego-ocf/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-link"
+               aria-label="Visitar perfil de LinkedIn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="dfortiz116@gmail.com"
+               class="social-link"
+               aria-label="Enviar correo electrónico">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            <a href="https://github.com/Diego-Or" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-link"
+               aria-label="Visitar perfil de GitHub">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p class="footer-text">
+          © <span id="currentYear"></span> Diego Ortiz. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
