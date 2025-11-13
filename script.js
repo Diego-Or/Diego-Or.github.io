@@ -48,3 +48,177 @@ skills.forEach((skill, index) => {
   skillCard.style.animationDelay = `${index * 0.1}s`;
   
   skillCard.innerHTML = `
+    <div class="skill-header">
+      <div class="skill-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </div>
+      <h3 class="skill-name">${skill.name}</h3>
+    </div>
+    
+    <div class="skill-bar-container">
+      <div class="skill-bar-bg">
+        <div class="skill-progress" 
+             style="--skill-level: ${skill.level}%"
+             role="progressbar"
+             aria-valuenow="${skill.level}"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-label="${skill.name} nivel ${skill.level}%">
+        </div>
+      </div>
+      <span class="skill-percentage">${skill.level}%</span>
+    </div>
+  `;
+  
+  skillsGrid.appendChild(skillCard);
+});
+
+// Animar barras de progreso después de un delay
+setTimeout(() => {
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    bar.classList.add('animate');
+  });
+}, 100);
+
+// ============================================
+// PROJECTS DATA Y RENDER
+// ============================================
+const projects = [
+  {
+    title: 'E-commerce Dashboard',
+    description: 'Panel de administración con análisis en tiempo real',
+    tech: ['Angular', 'TypeScript', 'Chart.js']
+  },
+  {
+    title: 'Task Manager App',
+    description: 'Aplicación de gestión de tareas con drag & drop',
+    tech: ['Angular', 'RxJS', 'SCSS']
+  },
+  {
+    title: 'Weather App',
+    description: 'Aplicación del clima con geolocalización',
+    tech: ['Angular', 'API REST', 'CSS Grid']
+  }
+];
+
+const projectsGrid = document.getElementById('projectsGrid');
+
+projects.forEach((project, index) => {
+  const projectCard = document.createElement('article');
+  projectCard.className = 'project-card';
+  projectCard.style.animationDelay = `${index * 0.1}s`;
+  
+  const techTags = project.tech.map(tech => 
+    `<span class="tech-tag">${tech}</span>`
+  ).join('');
+  
+  projectCard.innerHTML = `
+    <div class="project-image">
+      ${project.title.charAt(0)}
+    </div>
+    
+    <h3 class="project-title">${project.title}</h3>
+    <p class="project-description">${project.description}</p>
+    
+    <div class="project-tech">
+      ${techTags}
+    </div>
+  `;
+  
+  projectsGrid.appendChild(projectCard);
+});
+
+// ============================================
+// YEAR DINÁMICO EN FOOTER
+// ============================================
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// ============================================
+// SMOOTH SCROLL CON OFFSET PARA HEADER FIJO
+// ============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// ============================================
+// INTERSECTION OBSERVER PARA ANIMACIONES
+// ============================================
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observar secciones para animaciones
+document.querySelectorAll('section').forEach(section => {
+  observer.observe(section);
+});
+
+// ============================================
+// ACTIVE LINK EN NAVEGACIÓN
+// ============================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= (sectionTop - 100)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// ============================================
+// ACCESIBILIDAD: FOCUS VISIBLE
+// ============================================
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    document.body.classList.add('keyboard-navigation');
+  }
+});
+
+document.addEventListener('mousedown', () => {
+  document.body.classList.remove('keyboard-navigation');
+});
+
+console.log('🚀 Portafolio cargado correctamente!');
+console.log('✨ Tema:', localStorage.getItem('theme') || 'light');
