@@ -32,10 +32,10 @@ themeToggle.addEventListener('click', () => {
 // SKILLS DATA Y RENDER
 // ============================================
 const skills = [
-  { name: 'HTML5', level: 95 },
+  { name: 'HTML5', level: 97 },
   { name: 'CSS3/Sass', level: 90 },
   { name: 'JavaScript', level: 88 },
-  { name: 'Angular', level: 85 },
+  { name: 'Angular', level: 80 },
   { name: 'Responsive Design', level: 92 },
   { name: 'Accessibility', level: 87 }
 ];
@@ -88,20 +88,12 @@ setTimeout(() => {
 // ============================================
 const projects = [
   {
-    title: 'E-commerce Dashboard',
-    description: 'Panel de administración con análisis en tiempo real',
-    tech: ['Angular', 'TypeScript', 'Chart.js']
+    title: 'Landing Veterinaria',
+    description: 'Landing page enfocada en accessibilidad Web.',
+    tech: ['HTML', 'JS', ,'FlexBox','Accesibility'],
+    img: './assets/proyects/vet.png',
+    url: 'https://ddev-veterinaria.netlify.app/'
   },
-  {
-    title: 'Task Manager App',
-    description: 'Aplicación de gestión de tareas con drag & drop',
-    tech: ['Angular', 'RxJS', 'SCSS']
-  },
-  {
-    title: 'Weather App',
-    description: 'Aplicación del clima con geolocalización',
-    tech: ['Angular', 'API REST', 'CSS Grid']
-  }
 ];
 
 const projectsGrid = document.getElementById('projectsGrid');
@@ -117,7 +109,9 @@ projects.forEach((project, index) => {
   
   projectCard.innerHTML = `
     <div class="project-image">
-      ${project.title.charAt(0)}
+      <a href="${project.url}" target="_blank">
+        <img src="${project.img}" alt="${project.title}">
+      </a>
     </div>
     
     <h3 class="project-title">${project.title}</h3>
@@ -126,6 +120,8 @@ projects.forEach((project, index) => {
     <div class="project-tech">
       ${techTags}
     </div>
+
+    <a href="${project.url}" target="_blank" class="project-button">Ver Proyecto ></a>
   `;
   
   projectsGrid.appendChild(projectCard);
