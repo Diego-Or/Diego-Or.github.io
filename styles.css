@@ -511,6 +511,12 @@ button:focus {
 .project-button{
   font-size: 0.9rem;
   padding-top: 10px;
+  color: var(--purple-800);
+}
+
+.project-button:hover{
+  font-weight: bold;
+   transition: .2s;
 }
 
 .dark-mode .project-description {
@@ -692,4 +698,5 @@ button:focus {
   .section-title {
     font-size: 1.875rem;
   }
+
 }
