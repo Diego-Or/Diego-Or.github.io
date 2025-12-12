@@ -94,6 +94,13 @@ const projects = [
     img: './assets/proyects/vet.png',
     url: 'https://ddev-veterinaria.netlify.app/'
   },
+  {
+    title: 'Country App',
+    description: 'Aplicación para buscar Países y capitales',
+    tech: ['Angular', 'API REST', ,'Tailwind','Daisy UI'],
+    img: './assets/proyects/country-app.png',
+    url: 'https://angularcountry.netlify.app/'
+  },
 ];
 
 const projectsGrid = document.getElementById('projectsGrid');
