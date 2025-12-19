@@ -90,7 +90,7 @@ const projects = [
   {
     title: 'Landing Veterinaria',
     description: 'Landing page enfocada en accessibilidad Web.',
-    tech: ['HTML', 'JS', ,'FlexBox','Accesibility'],
+    tech: ['HTML', 'CSS', 'JS', ,'FlexBox','Accesibility'],
     img: './assets/proyects/vet.png',
     url: 'https://ddev-veterinaria.netlify.app/'
   },
@@ -104,7 +104,7 @@ const projects = [
   {
     title: 'Asignación de Turnos',
     description: 'Aplicación pensada para Jefes de enfermería que asigna turnos diarios.',
-    tech: ['HTML', 'CSS', 'JS' ,'Local Storage'],
+    tech: ['HTML', 'CSS', 'JS' ,'Local Storage', 'Claude Code', 'Accessibility'],
     img: './assets/proyects/asignacion-aux.png',
     url: 'https://asignacion-aux.netlify.app/'
   },
