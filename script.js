@@ -96,10 +96,17 @@ const projects = [
   },
   {
     title: 'Country App',
-    description: 'Aplicación para buscar Países y capitales',
+    description: 'Aplicación para buscar Países y capitales.',
     tech: ['Angular', 'API REST', ,'Tailwind','Daisy UI'],
     img: './assets/proyects/country-app.png',
     url: 'https://angularcountry.netlify.app/'
+  },
+  {
+    title: 'Asignación de Turnos',
+    description: 'Aplicación pensada para Jefes de enfermería que asigna turnos diarios.',
+    tech: ['HTML', 'CSS', 'JS' ,'Local Storage'],
+    img: './assets/proyects/asignacion-aux.png',
+    url: 'https://asignacion-aux.netlify.app/'
   },
 ];
 
